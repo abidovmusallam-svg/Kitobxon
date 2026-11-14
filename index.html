@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kitobxon - kitob do'koni</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="eslatma">Butun O'zbekiston bo'ylab yetkazib berish · Har kuni 9:00-20:00</div>
+
+  <header>
+    <div class="konteyner yuqori">
+      <nav id="menyu">
+        <a href="#bosh" data-sahifa="bosh">Bosh sahifa</a>
+        <a href="#katalog" data-sahifa="katalog">Katalog</a>
+        <a href="#biz" data-sahifa="biz">Biz haqimizda</a>
+        <a href="#aloqa" data-sahifa="aloqa">Aloqa</a>
+      </nav>
+      <a class="logo" href="#bosh"><img src="icon.svg" alt="" width="36" height="36">Kitobxon</a>
+      <div class="ong">
+        <button class="savat-tugma" id="savatTugma">Savat<b id="savatSoni">0</b></button>
+        <div class="maslahat" id="maslahat"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="sahifa" id="bosh">
+      <div class="qahramon">
+        <div class="konteyner qahramon-ichi">
+          <div>
+            <p class="belgi">Yangi mavsum</p>
+            <h1>Bir kitob - yangi dunyo.</h1>
+            <p class="kirish">O'zbek va jahon adabiyotining eng sara 30 ta kitobi. Muqova ustiga kelsangiz - tavsifini o'qiysiz.</p>
+            <a class="tugma" href="#katalog">Katalogni ochish</a>
+          </div>
+          <div id="kunKitobi"></div>
+        </div>
+      </div>
+
+      <div class="konteyner">
+        <div class="afzallik">
+          <div><b>Tez yetkazish</b><span>3 kun ichida eshigingizgacha</span></div>
+          <div><b>Ishonchli</b><span>Asl nusxadagi kitoblar</span></div>
+          <div><b>Qulay</b><span>Olib ketish yoki kuryer</span></div>
+        </div>
+        <h2 class="bolim">Yangi kelganlar</h2>
+        <div class="tasma" id="yangilar"></div>
+      </div>
+    </section>
+
+    <section class="sahifa konteyner" id="katalog">
+      <h1 class="sahifa-nomi">Katalog</h1>
+      <div class="kitoblar" id="kitoblar"></div>
+      <div class="sahifalash" id="sahifalash"></div>
+    </section>
+
+    <section class="sahifa konteyner" id="biz">
+      <div class="matnli">
+        <h1 class="sahifa-nomi">Biz haqimizda</h1>
+        <p>Kitobxon - o'qishni yaxshi ko'radigan odamlar uchun yaratilgan do'kon. O'zbek va jahon adabiyoti klassiklarining asarlarini jamlaymiz.</p>
+        <p>Buyurtmadan oldin kitob tavsifini ko'rish uchun muqova ustiga kursorni olib keling.</p>
+      </div>
+      <div class="faktlar">
+        <div><b id="kitobSoni">0</b>kitob</div>
+        <div><b id="turkumSoni">0</b>turkum</div>
+        <div><b>24 soat</b>ichida qadoqlaymiz</div>
+        <div><b>3 kun</b>ichida yetkazamiz</div>
+      </div>
+    </section>
+
+    <section class="sahifa konteyner" id="aloqa">
+      <div class="matnli">
+        <h1 class="sahifa-nomi">Aloqa</h1>
+        <p>Savol yoki taklifingiz bo'lsa, yozing.</p>
+        <form id="xabarForma" novalidate>
+          <input name="ism" placeholder="Ismingiz" autocomplete="name">
+          <input name="pochta" type="email" placeholder="Email manzilingiz" autocomplete="email">
+          <textarea name="matn" id="xabarMatni" maxlength="300" placeholder="Xabaringiz"></textarea>
+          <div class="belgi-soni"><span id="belgiSoni">0</span>/300</div>
+          <button class="tugma" type="submit">Xabarni yuborish</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="konteyner">© Kitobxon · Oxirgi event: <span id="jurnal">-</span></div>
+  </footer>
+
+  <div class="parda" id="parda"></div>
+  <div class="oyna" id="savat" role="dialog" aria-label="Savat">
+    <h2>Savatingiz <button class="yopish-tugma" id="yopish" aria-label="Yopish">×</button></h2>
+    <div id="royxat"></div>
+    <form id="buyurtmaForma" novalidate>
+      <input name="ism" placeholder="Ismingiz" autocomplete="name">
+      <input name="telefon" placeholder="Telefon: +998 90 123 45 67" autocomplete="tel">
+      <input name="manzil" placeholder="Manzil" autocomplete="street-address">
+      <select name="yetkazish" id="yetkazish" aria-label="Yetkazish usuli">
+        <option value="0">Olib ketish (bepul)</option>
+        <option value="15000">Kuryer (+15 000 so'm)</option>
+      </select>
+      <div class="jami"><span>Jami</span><span id="summa">0 so'm</span></div>
+      <button class="tugma" type="submit">Buyurtma berish</button>
+    </form>
+  </div>
+  <div id="xabar" role="status"></div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
